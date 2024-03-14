@@ -1,0 +1,41 @@
+---
+const { active } = Astro.props;
+---
+
+<section>
+  <p id="en">EN</p>
+  <p id="da" class="active">DA</p>
+</section>
+
+<style>
+  section {
+    display: inline-flex;
+    gap: 1em;
+  }
+  p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .active {
+    color: var(--secondary-color);
+    text-decoration: underline;
+  }
+</style>
+
+<script>
+  const activeLang = document.querySelector("section");
+  const da = document.querySelector("#da");
+  const en = document.querySelector("#en");
+
+  activeLang.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (event.target === da) {
+      da.classList.add("active");
+      en.classList.remove("active");
+    } else if (event.target === en) {
+        da.classList.remove("active");
+        en.classList.add("active")
+    }
+  });
+</script>
