@@ -22,13 +22,13 @@ import SoMe from "../components/SoMe.astro"
     </div>
     <div class="soMe" >
         <SoMe>
-            <img src="../public/some-icons/facebook.svg" alt="">
+            <a href="https://www.facebook.com/cphlightfest/"><img src="../public/some-icons/facebook.svg" alt=""></a>
         </SoMe>
         <SoMe>
-            <img src="../public/some-icons/youtube.svg" alt="">
+            <a href="https://www.youtube.com/channel/UCLxM8I3HMXuXYLtcssa4pdA/videos"><img src="../public/some-icons/youtube.svg" alt=""></a>
         </SoMe>
         <SoMe>
-            <img src="../public/some-icons/instagram.svg" alt="">
+            <a href="https://www.instagram.com/cphlightfest/?hl=da"><img src="../public/some-icons/instagram.svg" alt=""></a>
         </SoMe>
     </div>
     </div>
@@ -45,9 +45,19 @@ li, a{
     letter-spacing: 0.72px;
     color: var(--text-color);
     list-style: none;
+    text-decoration: none;
 }
 
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
 .line {
+    margin-left: 2rem;
+    margin-right: 2.5rem;
     height: 2px;
     margin-bottom: 2rem;
     background-color: var(--text-color);
@@ -55,7 +65,7 @@ li, a{
 
 .grid_1_1_1 {
     display: grid;
-    gap: 27rem;
+    gap: 29rem;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
