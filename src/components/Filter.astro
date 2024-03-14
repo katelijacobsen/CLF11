@@ -1,0 +1,22 @@
+---
+const {variant, position} = Astro.props;
+---
+
+<button class={variant + " " + position}><slot /></button>
+
+<style>
+
+/*placering*/
+
+.right {}
+.left {}
+.middle {}
+
+/*variant*/
+
+ .active {}
+
+
+
+
+</style>
