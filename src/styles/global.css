@@ -1,6 +1,6 @@
 :root {
   --primary-color: black;
-  --text-color: #eff1f2;
+  --text-color: #f2f2f2;
   --bg-menu: #dc4471;
   --CallToAction-color: linear-gradient(
     90deg,
@@ -10,15 +10,12 @@
   --secondary-color: #00b9b5;
   --tertiary-color: #8d67fb;
   --tertiaryActive-color: #d737ff;
-
 }
 
-
 body {
-    font-family: "noto-sans", sans-serif;
-    background-color: var(--primary-color);
-    
- }
+  font-family: "noto-sans", sans-serif;
+  background-color: var(--primary-color);
+}
 
 .statement {
   font-family: "noto-sans";
