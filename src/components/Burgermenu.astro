@@ -1,0 +1,210 @@
+---
+import Lang from "./Lang.astro";
+---
+
+<section class="lang-menu">
+  <Lang />
+  <div class="burgermenu">
+    <p>MENU</p>
+    <div class="menu-btn">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <nav class="globalmenu">
+    <ul>
+      <li>
+        <ul>
+          <li class="nav-title">festival</li>
+          <a href="#">
+            <li>Festival</li>
+          </a>
+          <a href="../pages/singleview.astro">
+            <li>Program</li>
+          </a>
+          <a href="#">
+            <li>Foto konkurrence</li>
+          </a>
+          <a href="#">
+            <li>Tidligere festivaler</li>
+          </a>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-title">information</li>
+          <a href="#">
+            <li>Permanente installationer</li>
+          </a>
+          <a href="#">
+            <li>For kunstnere</li>
+          </a>
+          <a href="#">
+            <li>Bliv vært</li>
+          </a>
+          <a href="#">
+            <li>Bliv sponsor</li>
+          </a>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <li class="nav-title">om</li>
+          <a href="#">
+            <li>Hvem er vi</li>
+          </a>
+          <a href="#">
+            <li>Kontakt</li>
+          </a>
+          <a href="#">
+            <li>Sponsorer</li>
+          </a>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<style>
+  /* grid area for header placement */
+  .lang-menu {
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+
+  /* burgermenu area */
+  .burgermenu {
+    display: inline-flex;
+    align-items: center;
+    grid-column: 2/-1;
+    text-align: end;
+    justify-content: end;
+    gap: 1em;
+  }
+  .menu-btn {
+    width: 44px;
+    height: 32px;
+    position: relative;
+    overflow: hidden;
+    z-index: 99;
+  }
+
+  .menu-btn:hover {
+    cursor: pointer;
+  }
+
+  .line {
+    background-color: white;
+    width: 32px;
+    height: 1.2px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .line:nth-of-type(2) {
+    top: calc(50% - 9px);
+  }
+  .line:nth-of-type(3) {
+    top: calc(50% + 9px);
+  }
+
+  /* when menu is open  */
+  .menu-btn.active .line:nth-of-type(1) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+  }
+
+  .menu-btn.active .line:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+  }
+
+  .menu-btn.active .line:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+  }
+
+  /* Actual menu that appears  */
+  .globalmenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-menu);
+
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+  }
+
+  .globalmenu.active {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    list-style: none;
+  }
+
+  /* Menu list styling  */
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  ul li ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 30%;
+  }
+
+  .nav-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e2045;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
+    letter-spacing: 0.72px;
+    color: var(--text-color);
+    padding: 2em 0 0;
+  }
+
+  a:hover {
+    text-decoration: underline 1px;
+    text-underline-offset: 4px;
+  }
+</style>
+
+<script>
+  // use this code for activating the global-menu
+  // let menuBtn = document.querySelector(".menu-btn")
+  // let globalMenu = document.querySelector(".globalmenu")
+  // let menuLink = document.querySelector(".nav-link")
+
+  // menuBtn.addEventListener("click", function(){
+  //     menuBtn.classList.toggle("active");
+  //     menuBtn.classList.toggle("active");
+  // })
+
+  // code underneath is just for being able to play with the burgermenu
+  let menuBtn = document.querySelector(".menu-btn");
+  let globalMenu = document.querySelector(".globalmenu");
+
+  menuBtn.addEventListener("click", function () {
+    menuBtn.classList.toggle("active");
+    globalMenu.classList.toggle("active"); // Toggle active class on the menu itself
+  });
+</script>
