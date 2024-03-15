@@ -2,26 +2,50 @@
 const { variant, size } = Astro.props;
 ---
 
-<a class={variant + " " + size}>
-  <div class="white-grad">
-    <slot />
-    <div class="ellipse_container">
-      <img src="../public/assets/Arrow.svg" alt="Pil" />
-      <div class="ellipse"></div>
-    </div>
-  </div>
-</a>
+<div class="button_container">
+    <a class={variant + " " + size}>
+        <div class="white-grad">
+            <slot />
+            <div class="ellipse_container">
+                <img src="../public/assets/Arrow.svg" alt="Pil" />
+                <div class="ellipse"></div>
+            </div>
+            <div class="hover_effect"></div>
+        </div>
+    </a>
+</div>
+
 
 <style>
+    .button_container{
+        position: relative;
+        overflow: hidden;
+    }
+    .hover_effect{
+        width: 311px;
+        height: 200px;
+        background-image: var(--CallToAction-color);
+        position: absolute;
+        left: 100%;
+        top: 05%;
+        transition-duration: 0.2s;
+        z-index: -2;
+        overflow: hidden;
+        
+
+    }    
   a {
     display: flex;
     justify-content: start;
+    overflow: hidden;
   }
   .ellipse_container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 10px;
+    position: relative;
+    overflow: hidden;
   }
   img {
     position: absolute;
@@ -29,18 +53,24 @@ const { variant, size } = Astro.props;
     height: 40px;
     border-radius: 100%;
     transition-duration: 0.2s;
-    z-index: 10;
+    z-index: 20;
   }
   .ellipse {
     width: 68px;
     height: 68px;
     border-radius: 100px;
-    background-image: var(--CallToAction-color);
+    background-image: linear-gradient(90deg, #8D67FB -225.33%, #FF3E40 102.67%);
     transition-duration: 0.2s;
     z-index: 5;
+    position: relative;
+    overflow: hidden;
   }
-  a:hover > {
-    width: 311px;
+  a:hover .hover_effect {
+    width: 380px;
+    height: 200px;
+    left: 0%;
+    display: flex;
+    justify-content: start;
   }
   .parent {
     display: flex;
@@ -48,16 +78,6 @@ const { variant, size } = Astro.props;
 
     gap: 1rem;
     background-color: rgb(122, 117, 139);
-  }
-
-  .text {
-    color: #ffffff;
-    font-size: 2.5rem;
-    padding: 0.5% 6% 0.5% 1.5%;
-    display: inline-block;
-    margin: 75px 0;
-    z-index: 6;
-    border-radius: 40px;
   }
   .white-grad {
     background: rgba(0, 185, 181, 0.2);
@@ -71,11 +91,13 @@ const { variant, size } = Astro.props;
     margin: 75px 0;
     z-index: 0;
     border-radius: 40px;
+    overflow: hidden;
+    
   }
   .white-grad:before {
     content: "";
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     inset: 0;
     padding: 4px;
     border-radius: 200px;
