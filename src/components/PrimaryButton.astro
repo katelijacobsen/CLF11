@@ -1,68 +1,92 @@
 ---
-const {variant, size} = Astro.props;
+const { variant, size } = Astro.props;
 ---
 
-
 <a class={variant + " " + size}>
-    <div class="container">
-        <slot /> 
-    <img src="../public/assets/Arrow.svg" alt="Pil">
-    <div class="ellipse"></div>
-</div> 
+  <div class="white-grad">
+    <slot />
+    <div class="ellipse_container">
+      <img src="../public/assets/Arrow.svg" alt="Pil" />
+      <div class="ellipse"></div>
+    </div>
+  </div>
 </a>
 
-<a class={variant + " "  + size} href="#">
-    <div id="container">
-        <img src="../public/assets/Arrow.svg" alt="Pil">
-        <slot />
-        <div class="ellipse"></div>
-        <div class="glass"></div>
-        <div class="mask"></div>
-        <div class="gradient"></div>
-    </div>
-</a>
-    
 <style>
-    .container {
-        color: white;
-        border-radius: 100px;
-        font-family: "noto-sans", sans-serif;
-        font-size: 2rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 150%; /* 54px */
-        letter-spacing: 1.44px;
-        color: var(--text-color); 
-        display: inline-block;
-        border: 4px solid var(--text-color);
-        padding: 1% 8% 1% 3%;
-        position: relative;
-        z-index: 2;
-    }
-    img{
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        position: absolute;
-        left: 82%;
-        top: 20%;
-        transition-duration: .2s;
-    }
-    .ellipse{
-        width: 80px;
-        height: 80px;
-        border-radius: 100px;
-        background-image: var(--CallToAction-color);
-        transition-duration: .2s;
-        position: absolute;
-        left: 75%;
-        top: -2.5%;
-        z-index: -1;
-    }
-    .container:hover > .ellipse{
-        width: 327px;
-        left: -1%;
-        transition-duration: .2s;
-    }
-    
+  a {
+    display: flex;
+    justify-content: start;
+  }
+  .ellipse_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+  }
+  img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    transition-duration: 0.2s;
+    z-index: 10;
+  }
+  .ellipse {
+    width: 68px;
+    height: 68px;
+    border-radius: 100px;
+    background-image: var(--CallToAction-color);
+    transition-duration: 0.2s;
+    z-index: 5;
+  }
+  a:hover > {
+    width: 311px;
+  }
+  .parent {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+    background-color: rgb(122, 117, 139);
+  }
+
+  .text {
+    color: #ffffff;
+    font-size: 2.5rem;
+    padding: 0.5% 6% 0.5% 1.5%;
+    display: inline-block;
+    margin: 75px 0;
+    z-index: 6;
+    border-radius: 40px;
+  }
+  .white-grad {
+    background: rgba(0, 185, 181, 0.2);
+    backdrop-filter: blur(2px);
+    color: #ffffff;
+    font-size: 2.5rem;
+    padding: 0.2% 0% 0.2% 2.5%;
+    text-align:center;
+    align-items: center;
+    display: flex;
+    margin: 75px 0;
+    z-index: 0;
+    border-radius: 40px;
+  }
+  .white-grad:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    padding: 4px;
+    border-radius: 200px;
+    background: var(--CallToAction-color);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 </style>
