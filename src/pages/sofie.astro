@@ -1,8 +1,16 @@
 ---
+import Footer from "../components/Footer.astro"
+import SoMe from "../components/SoMe.astro"
 import "../styles/global.css"
 import Filter from "../components/Filter.astro"
+import Mainlayout from "../layouts/Mainlayout.astro"
+
 ---
+<Mainlayout title="Sofie">
 <Filter variant="passive" position="left">Installationer</Filter>
 <Filter variant="passive" position="middle">Events</Filter>
 <Filter variant="active" position="right">Guidede ture</Filter>
+</Mainlayout>
+
+<style>
 
