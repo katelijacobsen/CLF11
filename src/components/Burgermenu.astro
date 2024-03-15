@@ -1,8 +1,9 @@
 ---
-
+import Lang from "./Lang.astro";
 ---
 
 <section class="lang-menu">
+  <Lang />
   <div class="burgermenu">
     <p>MENU</p>
     <div class="menu-btn">
@@ -69,8 +70,12 @@
 <style>
   /* grid area for header placement */
   .lang-menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: end;
+
+
   }
   /* burgermenu area */
   .burgermenu {
