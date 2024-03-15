@@ -59,9 +59,9 @@ h3 {
 
 p {
   font-family: "noto-sans";
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 150%; /* 27px */
   letter-spacing: 0.72px;
   color: var(--text-color);
