@@ -1,28 +1,28 @@
 ---
 import "../styles/global.css";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-        <header>
-		<Navigation/>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
     </header>
-	<main>
-        <slot/>
-	</main>
+    <main>
+      <slot />
+    </main>
     <footer>
-        <Footer/>
+      <Footer />
     </footer>
-	</body>
+  </body>
 </html>
