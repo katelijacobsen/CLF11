@@ -1,0 +1,50 @@
+---
+import SecondaryButtons from "./SecondaryButtons.astro";
+---
+
+<section>
+  <article>
+    <h2>Vil du få lyse idéer?</h2>
+    <p>Hold dig opdateret med vores newsletter</p>
+    <h3>Mail:</h3>
+    <input type="text" />
+    <SecondaryButtons>SEND</SecondaryButtons>
+  </article>
+  <div>
+    <img src="../img/clf-newsletter-img.webp" alt="" />
+  </div>
+</section>
+
+<style>
+  img {
+    width: 581px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  article {
+  }
+  section {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(
+        220% 52.05% at 53.21% 0%,
+        rgba(161, 129, 255, 0.5) 0%,
+        rgba(102, 102, 102, 0) 100%
+      ),
+      radial-gradient(
+        231.39% 57.78% at 0% 100.01%,
+        rgba(0, 185, 181, 0.5) 0%,
+        rgba(102, 102, 102, 0) 100%
+      );
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  input {
+    border: var(--secondary-color) 4px solid;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--text-color);
+    font-family: "noto-sans";
+  }
+</style>
