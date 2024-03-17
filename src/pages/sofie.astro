@@ -4,9 +4,11 @@ import SoMe from "../components/SoMe.astro";
 import "../styles/global.css";
 import Filter from "../components/Filter.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
+import Purchase from "../components/Purchase.astro";
 ---
 
 <Mainlayout title="Sofie">
+  <Purchase />
   <Filter variant="passive" position="left">Installationer</Filter>
   <Filter variant="passive" position="middle">Events</Filter>
   <Filter variant="active" position="right">Guidede ture</Filter>
