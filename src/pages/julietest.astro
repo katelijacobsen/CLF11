@@ -1,20 +1,38 @@
 ---
 import Card from "../components/Card.astro";
-import Mainlayout from "../layouts/Mainlayout.astro";
+import "../styles/global.css";
+import "../styles/listview.css";
+
+const items = await fetch(
+  "https://txcxsnasevoytrplgpun.supabase.co/rest/v1/data",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4Y3hzbmFzZXZveXRycGxncHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTMzMDgsImV4cCI6MjAyNjA2OTMwOH0.AJ0YE8S2nFHTBadk6TNC8bNfgrftJoHZbDx2N57P83A",
+    },
+  }
+).then((res) => res.json());
 ---
 
-<Mainlayout title="Julie">
-  <Card
-    img="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/Stromma-baad-1.jpg"
-    title="Liveguidet kanalrundfart langs kunstværkerne"
-    description="Oplev de spændende lysskulpturer og installationer ombord på kanalrundfarten på vores specialdesignede Lysfestival-ture."
-    label="Guidede tur"
-  />
-  <br />
-  <Card
-    img="https://copenhagenlightfestival.org/wp-content/uploads/2024/02/01.-Du-som-er-i-Himlene-scaled.jpg"
-    title="01. Du som er i Himlene!"
-    description="Værket skaber en forbindelse mellem jorden under os og himmelen over os. Mellem det fysiske og det åndelige. Overgivelse til noget, som er højere end os. Et sted, hvor man kan forbinde sig til det, man tror på."
-    label="Event"
-  />
-</Mainlayout>
+<button id="installation-btn"> Installationer </button>
+<button id="guidede-btn"> Guidede ture </button>
+<section class="listview-grid">
+  {
+    //For hver ITEM indeni array'et "items", så returnerer vi et Card med et enkelt ITEM som prop.
+    items.map((item) => {
+      return <Card item={item} />;
+    })
+  }
+</section>
+
+<!-- <script>
+  function filterItems(filter) {
+    window.location = window.location + "?filter=" + filter;
+  }
+
+  document.querySelector("#guidede-btn").addEventListener("click", () => {
+    filterItems("guidede tur");
+  });
+</script> -->
+<style></style>
