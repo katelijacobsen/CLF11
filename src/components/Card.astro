@@ -1,17 +1,17 @@
 ---
-const { item } = Astro.props;
+const { objekt } = Astro.props;
 import Label from "../components/Label.astro";
 ---
 
-<article class="card">
+<article class="card" data-tag={objekt.tag}>
   <div class="image-container">
-    <img src={item.image} alt="" />
+    <img src={objekt.image} alt="" />
   </div>
   <div class="container">
-    <Label text={item.tag} />
-    <h3>{(item.number ? item.number + " " : "") + item.title}</h3>
-    <p class={item.description.length > 300 ? "desc-small" : "desc"}>
-      {item.description}
+    <Label text={objekt.tag} />
+    <h3>{(objekt.number ? objekt.number + " " : "") + objekt.title}</h3>
+    <p class={objekt.description.length > 300 ? "desc-small" : "desc"}>
+      {objekt.description}
     </p>
     <div class="button-container">
       <button>Tryk her</button>
@@ -23,8 +23,7 @@ import Label from "../components/Label.astro";
   .card {
     display: flex;
     flex-direction: column;
-    row-gap: 0;
-    background-color: tan;
+    background-color: rgb(37, 37, 37);
     padding-bottom: 2vw;
     width: 22vw;
     max-height: 75vh;
@@ -32,7 +31,7 @@ import Label from "../components/Label.astro";
     border-radius: 25px;
     color: var(--text-color);
     font-family: "noto-sans", sans-serif;
-    padding-bottom: 20px;
+    padding-bottom: 2vw;
     overflow: hidden;
     cursor: pointer;
     position: relative;

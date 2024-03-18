@@ -21,18 +21,18 @@ const items = await fetch(
   {
     //For hver ITEM indeni array'et "items", så returnerer vi et Card med et enkelt ITEM som prop.
     items.map((item) => {
-      return <Card item={item} />;
+      return <Card objekt={item} />;
     })
   }
 </section>
 
-<!-- <script>
-  function filterItems(filter) {
+<script>
+  /*  function filterItems(filter) {
     window.location = window.location + "?filter=" + filter;
   }
 
   document.querySelector("#guidede-btn").addEventListener("click", () => {
     filterItems("guidede tur");
-  });
-</script> -->
+  }); */
+</script>
 <style></style>
