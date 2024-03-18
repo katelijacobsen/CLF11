@@ -3,6 +3,8 @@ import "../styles/global.css"
 import SecondaryButtons from "../components/SecondaryButtons.astro"
 import PrimaryButton from "../components/PrimaryButton.astro"
 import Newsletter from "../components/Newsletter.astro"
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -15,15 +17,12 @@ import Newsletter from "../components/Newsletter.astro"
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
 		<header>
-			<nav>
-
-			</nav>
+			<Navigation></Navigation>
 		</header>
 		<PrimaryButton>PROGRAM</PrimaryButton>
 		<PrimaryButton>SE KORT</PrimaryButton>
 		<Newsletter />
-
+    <Footer />
 	</body>
 </html>
