@@ -15,7 +15,9 @@ const items = await fetch(
 ).then((res) => res.json());
 ---
 
-<button id="installation-btn"> Installationer </button>
+<a href={`items/${items.tag}`}>
+  <button id="installation-btn"> Installationer </button>
+</a>
 <button id="guidede-btn"> Guidede ture </button>
 <section class="listview-grid">
   {

@@ -1,0 +1,39 @@
+---
+import Card from "../components/Card.astro";
+import "../styles/global.css";
+import "../styles/listview.css";
+
+const items = await fetch(
+  "https://txcxsnasevoytrplgpun.supabase.co/rest/v1/data",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4Y3hzbmFzZXZveXRycGxncHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTMzMDgsImV4cCI6MjAyNjA2OTMwOH0.AJ0YE8S2nFHTBadk6TNC8bNfgrftJoHZbDx2N57P83A",
+    },
+  }
+).then((res) => res.json());
+---
+
+<button id="installation-btn"> Installationer </button>
+
+<button id="guidede-btn"> Guidede ture </button>
+<section class="listview-grid">
+  {
+    //For hver ITEM indeni array'et "items", så returnerer vi et Card med et enkelt ITEM som prop.
+    items.map((item) => {
+      return <Card objekt={item} />;
+    })
+  }
+</section>
+
+<script>
+  /*  function filterItems(filter) {
+    window.location = window.location + "?filter=" + filter;
+  }
+
+  document.querySelector("#guidede-btn").addEventListener("click", () => {
+    filterItems("guidede tur");
+  }); */
+</script>
+<style></style>
