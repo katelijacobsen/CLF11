@@ -9,13 +9,16 @@ const {src} = Astro.props;
 </section>
 
 <style>
+  body{
+    background-image: url("../img/grain-bg.svg");
+    background-size: cover;
+  }
   section {
     position: relative;
   }
   img {
     position: absolute;
-    width: 640px;
-    height: 427px;
+    width: 100%;
     border-radius: 30px;
     z-index: 1;
     left: 64px;
