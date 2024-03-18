@@ -1,9 +1,13 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1fe9225 (build index)
 import "../styles/global.css";
 import SecondaryButtons from "../components/SecondaryButtons.astro";
 import PrimaryButton from "../components/PrimaryButton.astro";
 import Newsletter from "../components/Newsletter.astro";
+<<<<<<< HEAD
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import IndexImg from "../components/IndexImg.astro";
@@ -70,27 +74,68 @@ import "../styles/global.css"
 import SecondaryButtons from "../components/SecondaryButtons.astro"
 import PrimaryButton from "../components/PrimaryButton.astro"
 import Newsletter from "../components/Newsletter.astro"
+=======
+>>>>>>> 1fe9225 (build index)
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import IndexImg from "../components/IndexImg.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="https://use.typekit.net/grc8wfo.css">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header>
-			<Navigation></Navigation>
-		</header>
-		<PrimaryButton>PROGRAM</PrimaryButton>
-		<PrimaryButton>SE KORT</PrimaryButton>
-		<Newsletter />
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://use.typekit.net/grc8wfo.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header>
+      <Navigation />
+    </header>
+    <PrimaryButton>PROGRAM</PrimaryButton>
+    <PrimaryButton>SE KORT</PrimaryButton>
+    <section>
+      <article>
+        <h2>INTERAKTIVE LYSOPLEVELSER</h2>
+        <p>
+          Copenhagen Light Festival er en årligt tilbagevendende festival for
+          lys, der transformerer det stille og kolde vintermørke til en særlig
+          fejring af lyskunst, lysdesign og lysende oplevelser midt i
+          København.   I løbet af tre uger i februar præsenterer festivalen et
+          bredt udvalg af lysbaserede værker – heriblandt skulptur,
+          installation, projektion, event og belysning skabt af både etablerede
+          og spirende lysdesignere, lyskunstnere, studerende og organisationer.
+        </p>
+        <SecondaryButtons>LÆS MERE</SecondaryButtons>
+      </article>
+      <div>
+        <IndexImg src={"img/IndexImg2.jpg"} />
+      </div>
+    </section>
+    <Newsletter />
+    <section>
+      <article>
+        <div>
+          <IndexImg src={"img/IndexImg3.jpg"} />
+        </div>
+        <h2>ARRANGERMENTER</h2>
+        <p>
+          Copenhagen Light Festival er en årligt tilbagevendende festival for
+          lys, der transformerer det stille og kolde vintermørke til en særlig
+          fejring af lyskunst, lysdesign og lysende oplevelser midt i
+          København.   I løbet af tre uger i februar præsenterer festivalen et
+          bredt udvalg af lysbaserede værker – heriblandt skulptur,
+          installation, projektion, event og belysning skabt af både etablerede
+          og spirende lysdesignere, lyskunstnere, studerende og organisationer.
+        </p>
+        <SecondaryButtons>LÆS MERE</SecondaryButtons>
+      </article>
+    </section>
+    
     <Footer />
+<<<<<<< HEAD
 	</body>
 >>>>>>> 6a54351 (merge buttons and newsletter in main)
 </html>
@@ -119,4 +164,22 @@ import Footer from "../components/Footer.astro";
   article {
     padding: 0 16% 0 0;
   }
+=======
+  </body>
+</html>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 64px 0 64px;
+  }
+
+
+>>>>>>> 1fe9225 (build index)
 </style>
