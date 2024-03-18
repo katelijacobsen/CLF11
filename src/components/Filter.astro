@@ -1,14 +1,11 @@
 ---
-const {variant, position} = Astro.props;
+const { variant, position } = Astro.props;
 ---
 
 <button class={variant + " " + position}><slot /></button>
 
 <style>
-
-/*placering*/
-
-button {
+  button {
     width: 16.89rem;
     height: 3.42rem;
     border-style: none;
@@ -18,28 +15,29 @@ button {
     font-weight: 400;
     letter-spacing: 0.72px;
     color: var(--text-color);
+  }
 
-}
-.right {
-border-top-right-radius: 27.36px;
-border-bottom-right-radius: 27.36px; 
-}
-.left {
-border-top-left-radius: 27.36px;
-border-bottom-left-radius: 27.36px; 
-}
+  /*placering*/
 
+  .right {
+    border-top-right-radius: 27.36px;
+    border-bottom-right-radius: 27.36px;
+  }
 
-/*variant*/
+  .middle {
+  }
 
- .active {
-    background-color: var(--tertiaryActive-color) ;
- }
- .passive {
-    background-color: var(--tertiary-color) ;
- }
+  .left {
+    border-top-left-radius: 27.36px;
+    border-bottom-left-radius: 27.36px;
+  }
 
+  /*variant*/
 
-
-
+  .active {
+    background-color: var(--tertiaryActive-color);
+  }
+  .passive {
+    background-color: var(--tertiary-color);
+  }
 </style>

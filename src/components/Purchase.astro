@@ -1,0 +1,49 @@
+<article class="purchase">
+  <p>Fra 250 DKK / person</p>
+  <button>køb billet</button>
+  <button>køb som gave</button>
+  <div class="grid_1_1">
+    <p>I alt</p>
+    <p>0,00 DKK</p>
+  </div>
+</article>
+
+<style>
+  .purchase {
+    background-color: rgba(25.92, 25.46, 25.46, 0.6);
+    padding: 1.5rem;
+    width: 20rem;
+    border-radius: 22px;
+  }
+
+  button {
+    padding: 0.4rem;
+    margin-bottom: 1.5rem;
+    width: 19rem;
+    background-color: rgba(25.92, 25.46, 25.46, 0.6);
+    border: 3.21px #00b9b5 solid;
+    border-radius: 21.7px;
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    background-color: #00b9b5;
+  }
+
+  p,
+  button {
+    font-family: "noto-sans", "sans serif";
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.72px;
+    color: var(--text-color);
+  }
+
+  .grid_1_1 {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr 1fr;
+  }
+</style>
