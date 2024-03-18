@@ -1,17 +1,17 @@
 ---
-const { objekt } = Astro.props;
+const { item } = Astro.props;
 import Label from "../components/Label.astro";
 ---
 
 <article class="card">
   <div class="image-container">
-    <img src={objekt.image} alt="" />
+    <img src={item.image} alt="" />
   </div>
   <div class="container">
-    <Label text={objekt.tag} />
-    <h3>{(objekt.number ? objekt.number + " " : "") + objekt.title}</h3>
-    <p class={objekt.description.length > 300 ? "desc-small" : "desc"}>
-      {objekt.description}
+    <Label text={item.tag} />
+    <h3>{(item.number ? item.number + " " : "") + item.title}</h3>
+    <p class={item.description.length > 300 ? "desc-small" : "desc"}>
+      {item.description}
     </p>
     <div class="button-container">
       <button>Tryk her</button>

@@ -1,8 +1,8 @@
 ---
 import Card from "../components/Card.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
-import "../styles/global.css";
 import "../styles/listview.css";
+import "../styles/global.css";
 
 const items = await fetch(
   "https://txcxsnasevoytrplgpun.supabase.co/rest/v1/data",
@@ -37,24 +37,14 @@ const items = await fetch(
       </a>
     </div>
   </section>
-
-  <div class="listview-grid">
+  <section class="listview-grid">
     {
       //For hver ITEM indeni array'et "items", så returnerer vi et Card med et enkelt ITEM som prop.
       items.map((item) => {
-        return <Card item={item} />;
+        if (item.tag === "Guidede tur") {
+          return <Card item={item} />;
+        }
       })
     }
-  </div>
+  </section>
 </Mainlayout>
-
-<script>
-  /*  function filterItems(filter) {
-    window.location = window.location + "?filter=" + filter;
-  }
-
-  document.querySelector("#guidede-btn").addEventListener("click", () => {
-    filterItems("guidede tur");
-  }); */
-</script>
-<style></style>
