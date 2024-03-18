@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 import "../styles/global.css";
 import SecondaryButtons from "../components/SecondaryButtons.astro";
 import PrimaryButton from "../components/PrimaryButton.astro";
@@ -64,6 +65,34 @@ import IndexImg from "../components/IndexImg.astro";
     </section>
     <Footer />
   </body>
+=======
+import "../styles/global.css"
+import SecondaryButtons from "../components/SecondaryButtons.astro"
+import PrimaryButton from "../components/PrimaryButton.astro"
+import Newsletter from "../components/Newsletter.astro"
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://use.typekit.net/grc8wfo.css">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<header>
+			<Navigation></Navigation>
+		</header>
+		<PrimaryButton>PROGRAM</PrimaryButton>
+		<PrimaryButton>SE KORT</PrimaryButton>
+		<Newsletter />
+    <Footer />
+	</body>
+>>>>>>> 6a54351 (merge buttons and newsletter in main)
 </html>
 
 <style>
