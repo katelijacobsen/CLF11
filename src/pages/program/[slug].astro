@@ -1,0 +1,40 @@
+---
+import LayoutInstallation from "../../layouts/LayoutInstallation.astro";
+import LayoutEvent from "../../layouts/LayoutEvent.astro";
+import LayoutGuidedeTur from "../../layouts/LayoutGuidedeTur.astro";
+
+export async function getStaticPaths() {
+  const items = await fetch(
+    "https://txcxsnasevoytrplgpun.supabase.co/rest/v1/data",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4Y3hzbmFzZXZveXRycGxncHVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTMzMDgsImV4cCI6MjAyNjA2OTMwOH0.AJ0YE8S2nFHTBadk6TNC8bNfgrftJoHZbDx2N57P83A",
+      },
+    }
+  ).then((res) => res.json());
+
+  return items.map((item) => {
+    return {
+      params: { slug: item.slug },
+      props: { item: item },
+    };
+  });
+}
+const { item } = Astro.props;
+console.log(item);
+---
+
+<div>hejs{item.title}</div>
+<h2>
+  {
+    item.tag === "Installation" ? (
+      <LayoutInstallation />
+    ) : item.tag === "Event" ? (
+      <LayoutEvent />
+    ) : (
+      <LayoutGuidedeTur />
+    )
+  }
+</h2>
