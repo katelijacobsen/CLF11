@@ -2,11 +2,8 @@
   --primary-color: black;
   --text-color: #f2f2f2;
   --bg-menu: #dc4471;
-  --CallToAction-color: linear-gradient(
-    90deg,
-    #8d67fb -225.33%,
-    #ff3e40 102.67%
-  );
+  --CallToAction-color: linear-gradient(90deg, #8D67FB 0%, #FF3E40 100%);
+  --glassbtnbg: rgba(0, 185, 181, 0.2);
   --secondary-color: #00b9b5;
   --tertiary-color: #8d67fb;
   --tertiaryActive-color: #d737ff;
