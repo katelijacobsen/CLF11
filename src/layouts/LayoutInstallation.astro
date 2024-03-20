@@ -60,40 +60,44 @@ const { item } = Astro.props;
   .kunstner {
     border-radius: 30px;
   }
-  .sti {
-    margin-top: 2rem;
-    text-align: center;
-  }
+
   img {
     width: 100%;
-  }
-
-  a {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    text-decoration: none;
   }
 
   .icon {
     width: 4%;
   }
 
-  .grid_1_1 {
-    display: grid;
-    justify-items: center;
-    column-gap: 5rem;
-    grid-template-columns: 1fr 1fr;
-    margin: 4vw 7vw;
+  @media only screen and (min-width: 646px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 7vw 10vw;
+      gap: 20vw;
+      row-gap: 5vw;
+    }
+
+    .grid_1_1 {
+      display: grid;
+      justify-items: center;
+      column-gap: 5rem;
+      grid-template-columns: 1fr 1fr;
+      margin: 4vw 7vw;
+    }
+
+    .container {
+      width: 100%;
+    }
   }
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 7vw 10vw;
-    gap: 20vw;
-    row-gap: 5vw;
-  }
-  .container {
-    width: 100%;
+  @media only screen and (max-width: 646px) {
+    .grid_1_1 {
+      display: grid;
+      justify-items: center;
+      column-gap: 5rem;
+      grid-template-columns: 1fr;
+      margin: 4vw 7vw;
+    }
   }
 </style>
