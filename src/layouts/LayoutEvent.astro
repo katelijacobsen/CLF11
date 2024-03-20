@@ -1,1 +1,108 @@
-<h1>layout2</h1>
+---
+import "../styles/global.css";
+import Purchase from "../components/Purchase.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
+import Icons from "../components/Icons.astro";
+const { item } = Astro.props;
+---
+
+<Mainlayout>
+  <img src="../public/img/guidedetur.avif" alt="" />
+  <div class="sti">
+    <a href="">Program &nbsp;&nbsp;&nbsp; /</a>
+    <a href=""> &nbsp;&nbsp;&nbsp;Guidede ture &nbsp;&nbsp;&nbsp; /</a>
+    <a href=""> &nbsp;&nbsp;&nbsp; Wine and Walk</a>
+  </div>
+  <div class="grid_1_1">
+    <div>
+      <h1>{item.title}</h1>
+      <h2>Copenhagen Light Festival</h2>
+      <Icons header="Søren Kierkegaards Pl. 1, 1221 København K">
+        <img class="icon" src="../public/icons/icon_sted.svg" alt="" />
+      </Icons>
+      <Icons header="Dansk">
+        <img class="icon" src="../public/icons/icon_sprog.svg" alt="" />
+      </Icons>
+      <Icons header="2 timer">
+        <img class="icon" src="../public/icons/icon_tid.svg" alt="" />
+      </Icons>
+    </div>
+    <div>
+      <Purchase />
+    </div>
+    <div class="container">
+      <h3>WINE AND WALK</h3>
+      <p>
+        Det er weekend, det er friskt i luften, hvordan oplever vi København
+        bedst? Lysfestivalen, en stemningsfyldt rundtur & vinsmagning!
+        Lysfestivalen skal ikke bare ses, den skal mærkes og nydes… At den
+        tilmed smager godt, det er jo bare lækkert!
+      </p>
+    </div>
+    <div class="container">
+      <h3>HVORNÅR?</h3>
+      <p>
+        Lørdag d. 03.02.24 kl. 17.00-19.00. Se billetlink <br />
+        Lørdag d. 10.02.24 kl.17.00-19.00. Se billetlink <br />
+        Lørdag d. 17.02.24 kl. 17.30-19.30. Se billetlink <br />
+        Lørdag d. 24.02.24 kl. 17.30-19.30. Se billetlink <br />
+        Søndag d. 25.02.24 kl. 17.30-19.30. Se billetlink
+      </p>
+    </div>
+    <div class="container">
+      <h3>HVAD ER INDKLUDERET?</h3>
+      <p>
+        Wine & Walk kombinerer Copenhagen Light Festival med en velsmagende
+        omgang lørdags cava, hvidvin, rødvin og portvin fra Vinimondo. Kom med
+        på en stemningsfyldt Social Tour gennem Copenhagen Light Festival, hvor
+        der undervejs er fortællinger, vinsmagning og masser af stemning og højt
+        humør.
+      </p>
+    </div>
+    <div class="container">
+      <h3>PRAKTISK INFORMATION</h3>
+      <p>
+        Startsted: Den Sorte Diamant, Søren Kierkegaards Plads 1, 1221 København <br
+        />
+        Pris: 250 kr pr deltager (inkl. moms) <br />
+        Distance: ca 2,0 - 2,5 km <br />
+        Slutsted: Havnegade/Broens Gadekøkken/Nyhavn/Kongens Nytorv <br />
+        Finissage- d. 25.02.24 - Wine & Walk er en special søndags edition med masser
+        af lækre bobler og et sidste glimt af lysværkerne. <br />
+        Ved spørgsmål angående Wine & Walk kontakt:events@copenhageninsight.com
+      </p>
+    </div>
+  </div>
+</Mainlayout>
+
+<style>
+  .sti {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+  }
+
+  a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .icon {
+    width: 4%;
+  }
+
+  .grid_1_1 {
+    display: grid;
+    justify-items: center;
+    column-gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 3vw;
+  }
+
+  .container {
+    width: 60%;
+  }
+</style>

@@ -1,8 +1,10 @@
 ---
 import "../styles/global.css";
+import Label from "../components/Label.astro";
 import Purchase from "../components/Purchase.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
 import Icons from "../components/Icons.astro";
+const { item } = Astro.props;
 ---
 
 <Mainlayout>
@@ -14,7 +16,7 @@ import Icons from "../components/Icons.astro";
   </div>
   <div class="grid_1_1">
     <div>
-      <h1>Wine and Walk</h1>
+      <h1>{item.title}</h1>
       <h2>Copenhagen Light Festival</h2>
       <Icons header="Søren Kierkegaards Pl. 1, 1221 København K">
         <img class="icon" src="../public/icons/icon_sted.svg" alt="" />
@@ -25,10 +27,13 @@ import Icons from "../components/Icons.astro";
       <Icons header="2 timer">
         <img class="icon" src="../public/icons/icon_tid.svg" alt="" />
       </Icons>
+      <Label text={item.tag} />
     </div>
     <div>
       <Purchase />
     </div>
+  </div>
+  <div class="grid-container">
     <div class="container">
       <h3>WINE AND WALK</h3>
       <p>
@@ -98,9 +103,17 @@ import Icons from "../components/Icons.astro";
     justify-items: center;
     column-gap: 5rem;
     grid-template-columns: 1fr 1fr;
+    margin: 4vw 7vw;
   }
 
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 7vw 10vw;
+    gap: 20vw;
+    row-gap: 5vw;
+  }
   .container {
-    width: 60%;
+    width: 100%;
   }
 </style>

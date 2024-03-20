@@ -30,11 +30,11 @@ console.log(item);
 <h2>
   {
     item.tag === "Installation" ? (
-      <LayoutInstallation />
+      <LayoutInstallation item={item} />
     ) : item.tag === "Event" ? (
-      <LayoutEvent />
+      <LayoutEvent item={item} />
     ) : (
-      <LayoutGuidedeTur />
+      <LayoutGuidedeTur item={item} />
     )
   }
 </h2>
