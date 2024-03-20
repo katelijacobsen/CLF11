@@ -68,9 +68,10 @@ import Lang from "./Lang.astro";
 
 <style>
   /* grid area for header placement */
-  nav > * {
-    padding: 20vw;
+  nav {
+    padding: 0 0 0 15vw;
   }
+
   .lang-menu {
     display: flex;
     gap: 3em;
@@ -166,6 +167,7 @@ import Lang from "./Lang.astro";
       position: absolute;
       top: 30%;
     }
+ 
   }
 
   .nav-title {
@@ -189,27 +191,24 @@ import Lang from "./Lang.astro";
   }
 
   @media only screen and (max-width: 646px) {
+    nav {
+      padding: 0 20vw;
+      min-width: 332px;
+    }
     .burgermenu p {
       display: none;
     }
-    .navi a:last-of-type {
-      padding-bottom: 2em;
-    }
-
     a {
       padding: 1em 0 0;
       font-size: 0.9rem;
     }
 
     /* Menu list styling  */
-
-    .navigation {
-      position: relative;
-    }
     ul {
       list-style: none;
       display: flex;
       flex-direction: column;
+      padding: 3em 0 0;
     }
   }
 </style>
