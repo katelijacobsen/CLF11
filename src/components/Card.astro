@@ -1,10 +1,11 @@
 ---
 const { item } = Astro.props;
 import Label from "./Label.astro";
+import SecondaryButtons from "./SecondaryButtons.astro";
 ---
 
-<a href={`program/${item.slug}`}>
-  <article class="card">
+<article class="card">
+  <a href={`program/${item.slug}`}>
     <div class="image-container">
       <img src={item.image} alt="" />
     </div>
@@ -15,11 +16,11 @@ import Label from "./Label.astro";
         {item.description}
       </p>
       <div class="button-container">
-        <button>Tryk her</button>
+        <SecondaryButtons />
       </div>
     </div>
-  </article>
-</a>
+  </a>
+</article>
 
 <style>
   .card {
@@ -28,8 +29,6 @@ import Label from "./Label.astro";
     background-color: rgb(37, 37, 37);
     padding-bottom: 2vw;
     width: 22vw;
-    max-height: 75vh;
-    height: 75vh;
     border-radius: 25px;
     color: var(--text-color);
     font-family: "noto-sans", sans-serif;
@@ -38,8 +37,7 @@ import Label from "./Label.astro";
     cursor: pointer;
     position: relative;
   }
-
-  button {
+  /*   button {
     border-radius: 1vw;
     max-width: fit-content;
     border-color: aquamarine;
@@ -49,7 +47,7 @@ import Label from "./Label.astro";
     font-weight: lighter;
     font-size: 0.9vw;
     padding: 5px 15px 5px 15px;
-  }
+  } */
 
   .button-container {
     position: absolute; /* virker kun fordi card er position: relative, og button-container er indeni. */
@@ -60,11 +58,12 @@ import Label from "./Label.astro";
   .image-container {
     position: relative;
     overflow: hidden;
+    height: 100%;
   }
 
   img {
     width: 100%;
-    height: 35vh;
+    height: 15vw;
     object-fit: cover;
     border-radius: 25px;
   }
@@ -75,14 +74,16 @@ import Label from "./Label.astro";
   .desc {
     font-weight: 100;
     font-size: 0.9vw;
+    line-height: 150%;
   }
 
   .desc-small {
     font-weight: 100;
     font-size: 0.75vw;
+    line-height: 150%;
   }
 
-  .label {
+  /*   .label {
     display: inline-block;
     padding: 2px 8px 2px 8px;
     border-radius: 25px;
@@ -97,8 +98,8 @@ import Label from "./Label.astro";
     font-family: "noto-sans", sans-serif;
     margin-top: 1.5vw;
     margin-bottom: 1.2vw;
-  }
-  /*   .container {
+  } */
+  .container {
     display: flex;
     flex-direction: column;
     padding-left: 20px;
@@ -107,7 +108,8 @@ import Label from "./Label.astro";
     row-gap: 0;
     font-family: "noto-sans", sans-serif;
     font-weight: lighter;
-  } */
+    margin-bottom: 4vw;
+  }
 
   .container {
     padding: 0 1.3vw;
@@ -118,5 +120,56 @@ import Label from "./Label.astro";
     font-weight: lighter;
     font-size: 1.4vw;
     margin: 0;
+  }
+
+  .card:hover {
+    .arrow {
+      left: 16%;
+      transition-duration: 0.2s;
+      flex-shrink: 0;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(37, 37, 37);
+      padding-bottom: 2vw;
+      width: 40vw;
+      border-radius: 25px;
+      color: var(--text-color);
+      font-family: "noto-sans", sans-serif;
+      padding-bottom: 2vw;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .container {
+      padding: 0 4vw;
+    }
+
+    h3 {
+      font-family: "noto-sans", sans-serif;
+      font-weight: lighter;
+      font-size: 2.5vw;
+      margin: 0;
+    }
+    .desc {
+      font-weight: 100;
+      font-size: 2vw;
+    }
+
+    .desc-small {
+      font-weight: 100;
+      font-size: 1.6vw;
+    }
+    img {
+      width: 100%;
+      height: 25vw;
+      object-fit: cover;
+      border-radius: 25px;
+    }
   }
 </style>

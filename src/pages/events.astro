@@ -26,25 +26,25 @@ const items = await fetch(
       <h1 class="title">Program</h1>
     </div>
     <div class="grid-btn">
-      <a href="/installations">
-        <button class="event-btn"> Installationer</button>
+      <a href="/CLF11/installations/#overview">
+        <button class="event-btn" id="overview"> Installationer</button>
       </a>
-      <a href="/events">
+      <a href="/CLF11/events/#overview">
         <button class="event-btn"> Events</button>
       </a>
-      <a href="/guidedtour">
+      <a href="/CLF11/guidedtour/#overview">
         <button class="event-btn"> Guidede ture </button>
       </a>
     </div>
-  </section>
-  <section class="listview-grid">
-    {
-      //For hver ITEM indeni array'et "items", så returnerer vi et Card med et enkelt ITEM som prop.
-      items.map((item) => {
-        if (item.tag === "Event") {
-          return <Card item={item} />;
-        }
-      })
-    }
+    <section class="listview-grid">
+      {
+        //For hver ITEM indeni array'et "items", så returnerer vi et Card med et enkelt ITEM som prop.
+        items.map((item) => {
+          if (item.tag === "Event") {
+            return <Card item={item} />;
+          }
+        })
+      }
+    </section>
   </section>
 </Mainlayout>
