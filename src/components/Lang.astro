@@ -8,6 +8,11 @@ const { active } = Astro.props;
 </section>
 
 <style>
+  @media only screen and (max-width: 646px) {
+    section p {
+     font-size: 14px;
+    }
+  }
   section {
     display: inline-flex;
     gap: 0.5em;
@@ -35,8 +40,8 @@ const { active } = Astro.props;
       da.classList.add("active");
       en.classList.remove("active");
     } else if (event.target === en) {
-        da.classList.remove("active");
-        en.classList.add("active")
+      da.classList.remove("active");
+      en.classList.add("active");
     }
   });
 </script>

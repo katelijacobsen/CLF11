@@ -13,10 +13,21 @@ import Lang from "./Lang.astro";
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: smaller;
-    padding: 32px 56px;
+    padding: 2rem 2rem;
   }
 
   img {
     width: 190px;
+  }
+
+  @media only screen and (max-width: 646px) {
+    div {
+      padding: 2rem 2rem;
+    }
+    img {
+      object-fit: cover;
+      width: 70%;
+      max-width: 190px;
+    }
   }
 </style>
