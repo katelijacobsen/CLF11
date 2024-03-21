@@ -71,6 +71,10 @@ import Lang from "./Lang.astro";
   nav {
     padding: 0 0 0 15vw;
   }
+
+  li {
+    z-index: 99;
+  }
   .lang-menu {
     display: flex;
     gap: 3em;
@@ -216,21 +220,12 @@ import Lang from "./Lang.astro";
 
 <script>
   // use this code for activating the global-menu
-  // let menuBtn = document.querySelector(".menu-btn")
-  // let globalMenu = document.querySelector(".globalmenu")
-  // let menuLink = document.querySelector(".nav-link")
-
-  // menuBtn.addEventListener("click", function(){
-  //     menuBtn.classList.toggle("active");
-  //     menuBtn.classList.toggle("active");
-  // })
-
-  // code underneath is just for being able to play with the burgermenu
   let menuBtn = document.querySelector(".menu-btn");
   let globalMenu = document.querySelector(".globalmenu");
+  let menuLink = document.querySelector(".nav-link");
 
   menuBtn.addEventListener("click", function () {
     menuBtn.classList.toggle("active");
-    globalMenu.classList.toggle("active"); // Toggle active class on the menu itself
+    globalMenu.classList.toggle("active");
   });
 </script>
