@@ -13,14 +13,14 @@ import Lang from "./Lang.astro";
     </div>
   </div>
   <nav class="globalmenu">
-    <ul>
+    <ul class="navigation">
       <li>
-        <ul>
+        <ul class="navi">
           <li class="nav-title">festival</li>
           <a href="#">
             <li>Festival</li>
           </a>
-          <a href="../pages/singleview.astro">
+          <a href="/listview">
             <li>Program</li>
           </a>
           <a href="#">
@@ -32,7 +32,7 @@ import Lang from "./Lang.astro";
         </ul>
       </li>
       <li>
-        <ul>
+        <ul class="navi">
           <li class="nav-title">information</li>
           <a href="#">
             <li>Permanente installationer</li>
@@ -49,7 +49,7 @@ import Lang from "./Lang.astro";
         </ul>
       </li>
       <li>
-        <ul>
+        <ul class="navi">
           <li class="nav-title">om</li>
           <a href="#">
             <li>Hvem er vi</li>
@@ -68,6 +68,10 @@ import Lang from "./Lang.astro";
 
 <style>
   /* grid area for header placement */
+  nav {
+    padding: 0 0 0 15vw;
+  }
+
   .lang-menu {
     display: flex;
     gap: 3em;
@@ -115,6 +119,9 @@ import Lang from "./Lang.astro";
     top: calc(50% + 9px);
   }
 
+  .menu-btn.active {
+    position: fixed;
+  }
   /* when menu is open  */
   .menu-btn.active .line:nth-of-type(1) {
     top: 50%;
@@ -149,28 +156,25 @@ import Lang from "./Lang.astro";
     transform: translateX(0);
   }
 
-  .nav-link {
-    list-style: none;
-  }
-
   /* Menu list styling  */
+  @media only screen and (min-width: 646px) {
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
-  ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  ul li ul {
-    display: grid;
-    grid-template-columns: 1fr;
-    position: absolute;
-    top: 30%;
+    ul li ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      position: absolute;
+      top: 30%;
+    }
   }
 
   .nav-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #1e2045;
     text-transform: uppercase;
   }
@@ -180,11 +184,34 @@ import Lang from "./Lang.astro";
     letter-spacing: 0.72px;
     color: var(--text-color);
     padding: 2em 0 0;
+    font-size: 1rem;
   }
 
   a:hover {
-    text-decoration: underline 1px;
+    text-decoration: underline 0.5px;
     text-underline-offset: 4px;
+  }
+
+  @media only screen and (max-width: 646px) {
+    nav {
+      padding: 0 20vw;
+      min-width: 332px;
+    }
+    .burgermenu p {
+      display: none;
+    }
+    a {
+      padding: 1em 0 0;
+      font-size: 0.9rem;
+    }
+
+    /* Menu list styling  */
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 3em 0 0;
+    }
   }
 </style>
 
