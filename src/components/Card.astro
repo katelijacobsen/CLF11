@@ -27,61 +27,53 @@ import SecondaryButtons from "./SecondaryButtons.astro";
     display: flex;
     flex-direction: column;
     background-color: rgb(37, 37, 37);
-    padding-bottom: 2vw;
-    width: 22vw;
-    border-radius: 25px;
-    color: var(--text-color);
-    font-family: "noto-sans", sans-serif;
-    padding-bottom: 2vw;
+    border-radius: 20px;
+    padding-bottom: 2em;
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    max-width: 400px;
+
   }
 
   .button-container {
     position: absolute; /* virker kun fordi card er position: relative, og button-container er indeni. */
     bottom: 3vh;
-    right: 1vw;
+    right: 2vw;
   }
 
   .image-container {
     position: relative;
     overflow: hidden;
+
     height: 100%;
   }
 
   img {
     width: 100%;
-    height: 15vw;
+    aspect-ratio: 4/3;
+
     object-fit: cover;
-    border-radius: 25px;
-  }
-  p {
-    font-family: "noto-sans", sans-serif;
-    font-weight: 100;
-  }
-  .desc {
-    font-weight: 100;
-    font-size: 0.9vw;
-    line-height: 150%;
+    border-radius: 20px 20px 0 0;
   }
 
-  .desc-small {
-    font-weight: 100;
-    font-size: 0.75vw;
+  .desc, .desc-small {
+    font-size: 1rem;
     line-height: 150%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 1em 0 0;
   }
 
-  .container {
+  /* .desc-small {
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 150%;
+  } */
+
+  div.container {
     display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
-    font-weight: lighter;
-    row-gap: 0;
-    font-family: "noto-sans", sans-serif;
-    font-weight: lighter;
-    margin-bottom: 4vw;
+    padding: 0.5em 1.5em 2em;
+
   }
 
   .container {
@@ -91,7 +83,7 @@ import SecondaryButtons from "./SecondaryButtons.astro";
   h3 {
     font-family: "noto-sans", sans-serif;
     font-weight: lighter;
-    font-size: 1.4vw;
+    font-size: 2rem
     margin: 0;
   }
   a {
@@ -105,51 +97,30 @@ import SecondaryButtons from "./SecondaryButtons.astro";
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 766px) {
     .card {
       display: flex;
       flex-direction: column;
       background-color: rgb(37, 37, 37);
       padding-bottom: 2vw;
-      width: 40vw;
       border-radius: 25px;
-      color: var(--text-color);
-      font-family: "noto-sans", sans-serif;
-      padding-bottom: 2vw;
+ 
+      padding-bottom: 2rem;
       overflow: hidden;
       cursor: pointer;
       position: relative;
+      margin: 0 2rem 2rem;
     }
 
     .container {
       padding: 0 4vw;
     }
-
-    h3 {
-      font-family: "noto-sans", sans-serif;
-      font-weight: lighter;
-      font-size: 2.5vw;
-      margin: 0;
-    }
-    .desc {
-      font-weight: 100;
-      font-size: 2vw;
-    }
+   
     .button-container {
       position: absolute; /* virker kun fordi card er position: relative, og button-container er indeni. */
       bottom: 2vh;
-      right: 1vw;
+      right: 2vw;
     }
-
-    .desc-small {
-      font-weight: 100;
-      font-size: 1.6vw;
-    }
-    img {
-      width: 100%;
-      height: 25vw;
-      object-fit: cover;
-      border-radius: 25px;
-    }
+  
   }
 </style>
