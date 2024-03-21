@@ -9,11 +9,6 @@ const { item } = Astro.props;
 
 <Mainlayout>
   <img src="../public/img/guidedetur.avif" alt="" />
-  <div class="sti">
-    <a href="">Program &nbsp;&nbsp;&nbsp; /</a>
-    <a href=""> &nbsp;&nbsp;&nbsp;Guidede ture &nbsp;&nbsp;&nbsp; /</a>
-    <a href=""> &nbsp;&nbsp;&nbsp; Wine and Walk</a>
-  </div>
   <div class="grid_1_1">
     <div>
       <h1>{item.title}</h1>
@@ -80,40 +75,46 @@ const { item } = Astro.props;
 </Mainlayout>
 
 <style>
-  .sti {
-    margin-top: 2rem;
-    text-align: center;
+  @media only screen and (max-width: 767px) {
+    .grid_1_1 {
+      display: grid;
+      justify-items: center;
+      column-gap: 4rem;
+      grid-template-columns: 1fr;
+      margin: 4vw 7vw;
+    }
   }
-  img {
-    width: 100%;
+  .kunstner {
+    border-radius: 30px;
   }
 
-  a {
-    font-size: 1.2rem;
-    color: var(--text-color);
-    text-decoration: none;
+  img {
+    width: 100%;
   }
 
   .icon {
     width: 4%;
   }
 
-  .grid_1_1 {
-    display: grid;
-    justify-items: center;
-    column-gap: 5rem;
-    grid-template-columns: 1fr 1fr;
-    margin: 4vw 7vw;
-  }
+  @media only screen and (min-width: 767px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 7vw 10vw;
+      gap: 20vw;
+      row-gap: 5vw;
+    }
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 7vw 10vw;
-    gap: 20vw;
-    row-gap: 5vw;
-  }
-  .container {
-    width: 100%;
+    .grid_1_1 {
+      display: grid;
+      justify-items: center;
+      column-gap: 5rem;
+      grid-template-columns: 1fr 1fr;
+      margin: 4vw 7vw;
+    }
+
+    .container {
+      width: 100%;
+    }
   }
 </style>

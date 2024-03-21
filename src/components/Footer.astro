@@ -62,21 +62,36 @@ import SoMe from "../components/SoMe.astro";
     background-color: var(--text-color);
   }
 
-  .grid_1_1_1 {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr 1fr;
+  @media only screen and (min-width: 646px) {
+    .grid_1_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .footer_content {
+      text-align: right;
+    }
+    .company_name {
+      opacity: 0.5;
+      text-transform: uppercase;
+      grid-column: span 1/-1;
+      text-align: end;
+      grid-row: 2;
+    }
   }
 
-  .company_name {
-    opacity: 0.5;
-    text-transform: uppercase;
-    grid-column: span 1/-1;
-    text-align: end;
-    grid-row: 2;
-  }
-
-  .footer_content {
-    text-align: right;
+  @media only screen and (max-width: 646px) {
+    .grid_1_1_1 {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+    .footer_content {
+      text-align: center;
+    }
+    .company_name {
+      opacity: 0.5;
+      text-transform: uppercase;
+      text-align: end;
+   
+    }
   }
 </style>

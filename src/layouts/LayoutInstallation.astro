@@ -1,1 +1,103 @@
-<h1>Layout1</h1>
+---
+import "../styles/global.css";
+import Label from "../components/Label.astro";
+import Purchase from "../components/Purchase.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
+import Icons from "../components/Icons.astro";
+const { item } = Astro.props;
+---
+
+---
+<Mainlayout>
+  <img src="../public/img/tordenhjerte.avif" alt="" />
+  <div class="grid_1_1">
+    <div>
+      <h1>{item.title}</h1>
+      <h2>Lars Lundehave Hansen (DK)</h2>
+      <h3>Nyhavn 71</h3>
+      <Label text={item.tag} />
+    </div>
+    <div>
+      <img class="kunstner" src="../public/img/larslundehave.avif" alt="" />
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="container">
+      <h3>LARS LUNDEHAVE HANSEN (DK)</h3>
+      <p>
+        Det slår gnister på hjørnet af Nyhavn. En mægtig sokkel synes at
+        tiltrække lynnedslag - eller er det nærmere, at den udligner den
+        elektriske spændingsforskel i atmosfæren? Den dramatiske kontur
+        gennemskæres af diffust, hvidt lys. En tung buldren høres fra Jorden.
+        Stiger man op i skulpturens midte, mærker man vibrationerne gennem
+        fødderne, mens sporadiske skyer af røg stiger op, og man spørger sig
+        selv, om der mon i virkeligheden er tale om en enorm overtryksventil for
+        kræfter, vi kun aner? Igennem to årtier har lydkunstner Lars Lundehave
+        Hansen markeret sit virke. Med afsæt i både en kunstnerisk uddannelse og
+        en mangeårig produktion i eksperimenterende lydmiljøer har Lundehave
+        Hansen afdækket og udforsket lyd i værker og værker af lyd. At opleve
+        Lundehave Hansens værker handler om at bevæge sig rundt og observere,
+        hvordan lyden og iscenesættelsen undersøger tid og rum på forskellig
+        vis.
+      </p>
+    </div>
+    <div class="container">
+      <h3>LINKS</h3>
+      <p>
+        www.larslundehavehansen.dk <br />
+        instagram.com/larslundehavehansen
+      </p>
+      <h3>TAK TIL</h3>
+      <p>
+        Rådet for Visuel Kunst, Statens Værksteder for Kunst, Statens Kunstfond,
+        71 Nyhavn, Copenhagen Strand Hotel
+      </p>
+    </div>
+  </div>
+</Mainlayout>
+
+<style>
+  .kunstner {
+    border-radius: 30px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .icon {
+    width: 4%;
+  }
+
+  @media only screen and (min-width: 767px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 7vw 10vw;
+      gap: 20vw;
+      row-gap: 5vw;
+    }
+
+    .grid_1_1 {
+      display: grid;
+      justify-items: center;
+      column-gap: 5rem;
+      grid-template-columns: 1fr 1fr;
+      margin: 4vw 7vw;
+    }
+
+    .container {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .grid_1_1 {
+      display: grid;
+      justify-items: center;
+      column-gap: 5rem;
+      grid-template-columns: 1fr;
+      margin: 4vw 7vw;
+    }
+  }
+</style>
