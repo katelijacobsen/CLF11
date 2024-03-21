@@ -17,8 +17,8 @@ const { item } = Astro.props;
       <h3>Nyhavn 71</h3>
       <Label text={item.tag} />
     </div>
-    <div>
-      <img class="kunstner" src="/img/larslundehave.avif" alt="" />
+    <div class="kunstner">
+      <img src="/img/larslundehave.avif" alt="" />
     </div>
   </div>
   <div class="grid-container">
@@ -67,10 +67,11 @@ const { item } = Astro.props;
 <style>
   .kunstner {
     border-radius: 30px;
-  }
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
 
-  img {
-    width: 100%;
+
   }
 
   .icon {
