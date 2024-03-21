@@ -6,6 +6,7 @@ import Newsletter from "../components/Newsletter.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import IndexImg from "../components/IndexImg.astro";
+import Mainsponsors from "../components/Mainsponsors.astro"
 ---
 
 <html lang="en">
@@ -82,6 +83,12 @@ import IndexImg from "../components/IndexImg.astro";
           </div>
         </article>
       </section>
+      <section class="sponsors">
+        <Mainsponsors/>
+        <div class="sponsors-btn">
+          <SecondaryButtons>SE ØVRIGE</SecondaryButtons>
+        </div>
+      </section>
     </main>
     <div class="footer">
       <Footer />
@@ -99,7 +106,6 @@ import IndexImg from "../components/IndexImg.astro";
     grid-column: 1/4;
     grid-row: 1;
     z-index: 2;
-    padding: 40px 54px 0 54px;
   }
   h1 {
     grid-column: 1/4;
@@ -162,5 +168,16 @@ import IndexImg from "../components/IndexImg.astro";
         rgba(102, 102, 102, 0) 100%
       ),
       rgba(211, 211, 211, 0) -200.115px 98.15px / 7% 4.994% no-repeat;
+  }
+  .sponsors{
+    padding: 16% 0 0 0;
+    display: grid;
+    justify-content: center;
+  
+  }
+  .sponsors-btn{
+    margin: 4% 0 0 0;
+    display: flex;
+    justify-content: end;
   }
 </style>
