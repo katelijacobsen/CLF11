@@ -142,9 +142,8 @@ import Mainsponsors from "../components/Mainsponsors.astro";
     }
     .primary-btn-container {
       display: grid;
-      grid-template-columns: 20vw 20vw;
+      grid-template-columns: 5vw 10vw;
       grid-template-rows: 80px;
-      gap: 8%;
     }
     .secondary-btn-container {
       display: flex;
@@ -179,6 +178,23 @@ import Mainsponsors from "../components/Mainsponsors.astro";
       margin: 4% 0 0 0;
       display: flex;
       justify-content: end;
+    }
+  }
+  @media only screen and (min-width:560px){
+    .primary-grid-container {
+      grid-column: 1;
+      grid-row: 3;
+      padding-left: 54px;
+    }
+    .primary-btn-container {
+      display: grid;
+      grid-template-columns: 19em 15em;
+      grid-template-rows: 70px;
+    }
+    .secondary-btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16%;
     }
   }
   @media only screen and (max-width: 646px) {
