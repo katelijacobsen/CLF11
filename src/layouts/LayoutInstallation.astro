@@ -7,7 +7,7 @@ import Icons from "../components/Icons.astro";
 const { item } = Astro.props;
 ---
 
----
+
 <Mainlayout>
   <img src={item.image} alt="bild" />
   <div class="grid_1_1">
@@ -70,8 +70,6 @@ const { item } = Astro.props;
     display: flex;
     justify-content: center;
     margin-left: 23%;
-
-
   }
 
   .icon {
@@ -80,6 +78,10 @@ const { item } = Astro.props;
 
   h3 {
     padding: 1em 0 0;
+  }
+
+  img {
+    width: 100%;
   }
 
   p,
