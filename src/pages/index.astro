@@ -6,7 +6,7 @@ import Newsletter from "../components/Newsletter.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import IndexImg from "../components/IndexImg.astro";
-import Mainsponsors from "../components/Mainsponsors.astro"
+import Mainsponsors from "../components/Mainsponsors.astro";
 ---
 
 <html lang="en">
@@ -84,7 +84,7 @@ import Mainsponsors from "../components/Mainsponsors.astro"
         </article>
       </section>
       <section class="sponsors">
-        <Mainsponsors/>
+        <Mainsponsors />
         <div class="sponsors-btn">
           <SecondaryButtons>SE ØVRIGE</SecondaryButtons>
         </div>
@@ -97,87 +97,170 @@ import Mainsponsors from "../components/Mainsponsors.astro"
 </html>
 
 <style>
-  header {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 1fr auto 1fr;
-  }
-  .nav {
-    grid-column: 1/4;
-    grid-row: 1;
-    z-index: 2;
-  }
-  h1 {
-    grid-column: 1/4;
-    grid-row: 2;
-    z-index: 1;
-    padding-left: 54px;
-    padding-bottom: 1%;
-  }
-  img {
-    width: 100%;
-    object-fit: cover;
-    place-self: stretch;
-    grid-row: 1/4;
-    grid-column: 1/4;
-    position: relative;
-    top: -24%;
-    opacity: 75%;
-    box-shadow: 0px 80px 200px rgba(35, 52, 231, 0.4);
-  }
-  main {
-    margin: 0 0 24% 0;
-    padding: 0;
-  }
+  @media only screen and (min-width: 646px) {
+    header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 1fr auto 1fr;
+    }
+    .nav {
+      grid-column: 1/4;
+      grid-row: 1;
+      z-index: 2;
+    }
+    h1 {
+      grid-column: 1/4;
+      grid-row: 2;
+      z-index: 1;
+      padding-left: 54px;
+      padding-bottom: 1%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      place-self: stretch;
+      grid-row: 1/4;
+      grid-column: 1/4;
+      position: relative;
+      top: -24%;
+      opacity: 75%;
+      box-shadow: 0px 80px 200px rgba(35, 52, 231, 0.4);
+    }
+    main {
+      margin: 0 0 24% 0;
+      padding: 0;
+    }
 
-  body {
-    background-image: url("../img/grain-bg.svg");
-    background-size: contain;
+    body {
+      background-image: url("../img/grain-bg.svg");
+      background-size: contain;
+    }
+    .primary-grid-container {
+      grid-column: 1;
+      grid-row: 3;
+      padding-left: 54px;
+    }
+    .primary-btn-container {
+      display: grid;
+      grid-template-columns: 20vw 20vw;
+      grid-template-rows: 80px;
+      gap: 8%;
+    }
+    .secondary-btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16%;
+    }
+    section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0% 54px 0% 54px;
+    }
+    article {
+      padding: 0% 4% 0% 54px;
+    }
+    .footer {
+      background:
+        radial-gradient(
+          70.2% 173.84% at 50.03% 95.39%,
+          rgba(141, 103, 251, 0.35) 0%,
+          rgba(102, 102, 102, 0) 100%
+        ),
+        rgba(211, 211, 211, 0) -200.115px 98.15px / 7% 4.994% no-repeat;
+    }
+    .sponsors {
+      padding: 16% 0 0 0;
+      display: grid;
+      justify-content: center;
+    }
+    .sponsors-btn {
+      margin: 4% 0 0 0;
+      display: flex;
+      justify-content: end;
+    }
   }
-  .primary-grid-container {
-    grid-column: 1;
-    grid-row: 3;
-    padding-left: 54px;
-  }
-  .primary-btn-container {
-    display: grid;
-    grid-template-columns: 20vw 20vw;
-    grid-template-rows: 80px;
-    gap: 8%;
-  }
-  .secondary-btn-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 16%;
-  }
-  section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0% 54px 0% 54px;
-  }
-  article {
-    padding: 0% 4% 0% 54px;
-  }
-  .footer {
-    background:
-      radial-gradient(
-        70.2% 173.84% at 50.03% 95.39%,
-        rgba(141, 103, 251, 0.35) 0%,
-        rgba(102, 102, 102, 0) 100%
-      ),
-      rgba(211, 211, 211, 0) -200.115px 98.15px / 7% 4.994% no-repeat;
-  }
-  .sponsors{
-    padding: 16% 0 0 0;
-    display: grid;
-    justify-content: center;
-  
-  }
-  .sponsors-btn{
-    margin: 4% 0 0 0;
-    display: flex;
-    justify-content: end;
+  @media only screen and (max-width: 646px) {
+    header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 1fr auto 1fr;
+    }
+    .nav {
+      grid-column: 1/4;
+      grid-row: 1;
+      z-index: 2;
+    }
+    h1 {
+      grid-column: 1/4;
+      grid-row: 2;
+      z-index: 1;
+      padding-left: 54px;
+      padding-bottom: 1%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+      place-self: stretch;
+      grid-row: 1/4;
+      grid-column: 1/4;
+      position: relative;
+      top: -24%;
+      opacity: 75%;
+      box-shadow: 0px 80px 200px rgba(35, 52, 231, 0.4);
+    }
+    main {
+      margin: 0 0 24% 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url("../img/grain-bg.svg");
+      background-size: contain;
+    }
+    .primary-grid-container {
+      grid-column: 1;
+      grid-row: 3;
+      padding-left: 54px;
+    }
+    .primary-btn-container {
+      display: grid;
+      grid-template-columns: 50vw 40vw;
+      grid-template-rows: 70px;
+    }
+    .secondary-btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 16%;
+    }
+    section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0% 54px 0% 54px;
+    }
+    article {
+    }
+    .footer {
+      background:
+        radial-gradient(
+          70.2% 173.84% at 50.03% 95.39%,
+          rgba(141, 103, 251, 0.35) 0%,
+          rgba(102, 102, 102, 0) 100%
+        ),
+        rgba(211, 211, 211, 0) -200.115px 98.15px / 7% 4.994% no-repeat;
+    }
+    .sponsors {
+      padding: 16% 0 0 0;
+      display: grid;
+      justify-content: center;
+    }
+    .sponsors-btn {
+      margin: 4% 0 0 0;
+      display: flex;
+      justify-content: end;
+    }
   }
 </style>

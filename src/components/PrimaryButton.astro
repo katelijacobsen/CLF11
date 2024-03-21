@@ -14,7 +14,8 @@ const { variant, size } = Astro.props;
 </a>
 
 <style>
-  .hover_effect {
+  @media only screen and (min-width: 646px){
+    .hover_effect {
     width: 300px;
     height: 200px;
     background-image: var(--CallToAction-color);
@@ -86,4 +87,80 @@ const { variant, size } = Astro.props;
       linear-gradient(#fff 0 0);
     mask-composite: exclude;
   }
+  }
+  @media only screen and (max-width: 646px){
+    .hover_effect {
+    width: 300px;
+    height: 200px;
+    background-image: var(--CallToAction-color);
+    position: absolute;
+    left: 100%;
+    top: 05%;
+    transition-duration: 0.3s;
+    z-index: -2;
+  }
+  a {
+    display: flex;
+    justify-content: start;
+    text-decoration: none;
+  }
+  .ellipse_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    position: relative;
+  }
+  img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    transition-duration: 0.5s;
+    z-index: 20;
+  }
+  .ellipse {
+    width: 68px;
+    height: 68px;
+    border-radius: 100px;
+    background-image: linear-gradient(90deg, #8d67fb -225.33%, #ff3e40 102.67%);
+    transition-duration: 0.5s;
+    z-index: 5;
+    position: relative;
+  }
+  .primary_btn:hover .hover_effect {
+    width: 330px;
+    height: 200px;
+    left: -15%;
+    display: flex;
+    justify-content: start;
+  }
+  .primary_btn {
+    background: var(--glassbtnbg);
+    backdrop-filter: blur(2px);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    padding: 0.2% 0% 0.2% 10%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    z-index: 0;
+    border-radius: 40px;
+    overflow: hidden;
+  }
+  .primary_btn:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    padding: 4px;
+    border-radius: 200px;
+    background: var(--CallToAction-color);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  }
+  
 </style>

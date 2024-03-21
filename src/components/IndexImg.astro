@@ -9,13 +9,16 @@ const { src } = Astro.props;
 </section>
 
 <style>
-  section {
+  @media only screen and (min-width: 646px){
+    section {
     display: grid;
     grid-template-columns: repeat(5, 160px);
     grid-template-rows: repeat(8, 80px);
     gap: 0px;
+    overflow: hidden;
   }
   img {
+    overflow: hidden;
     width:140%;
     grid-column: 2/5;
     grid-row: 6/4;
@@ -38,4 +41,43 @@ const { src } = Astro.props;
     grid-row: 2/9;
     margin: 8% 4% 10% 14% ;
   }
+
+  }
+  @media only screen and (max-width: 646px){
+    section {
+    display: grid;
+    grid-template-columns: repeat(4, 160px);
+    grid-template-rows: repeat(8, 80px);
+    gap: 0px;
+    overflow: hidden;
+
+  }
+  img {
+    width:100%;
+    grid-column: 1/5;
+    grid-row: 6/4;
+    z-index: 1;
+    place-self: center;
+    
+  }
+
+  .border1 {
+    border-top: 4px solid var(--secondary-color);
+    border-bottom: 4px solid var(--secondary-color);
+    grid-column: 1/5;
+    grid-row: 2/9;
+    margin-top: 1.5%;
+    margin-bottom: 7.5%;
+  }
+  .border2 {
+    border-bottom: 4px solid var(--secondary-color);
+    border-top: 4px solid var(--secondary-color);
+    grid-column: 1/5;
+    grid-row: 1/8;
+    margin-top: 8%;
+    margin-bottom: 1.5%;
+  }
+
+  }
+  
 </style>
