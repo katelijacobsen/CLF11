@@ -8,7 +8,7 @@ import Footer from "../components/Footer.astro";
 import IndexImg from "../components/IndexImg.astro";
 ---
 
-<html lang="da">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://use.typekit.net/grc8wfo.css" />
@@ -83,32 +83,13 @@ import IndexImg from "../components/IndexImg.astro";
         </article>
       </section>
     </main>
-    <Footer />
+    <div class="footer">
+      <Footer />
+    </div>
   </body>
 </html>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    background-image: url("../img/grain-bg.svg");
-    background-size: contain;
-  }
-  .primary-btn-container {
-    display: grid;
-    grid-template-columns: 20% 20%;
-  }
-  section {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    margin: 0 64px 0 64px;
-  }
-  article {
-    padding: 0 16% 0 0;
-  }
-
   header {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
