@@ -1,4 +1,5 @@
 ---
+import Filter from "../components/Filter.astro";
 import Card from "../components/Card.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
 import "../styles/listview.css";
@@ -25,15 +26,15 @@ const items = await fetch(
       />
       <h1 class="title">Program</h1>
     </div>
-    <div class="grid-btn">
+    <div class="grid-btn" id="overview">
       <a href="/CLF11/installations/#overview">
-        <button class="event-btn" id="overview"> Installationer</button>
+        <Filter variant="active" position="left">Installationer</Filter>
       </a>
       <a href="/CLF11/events/#overview">
-        <button class="event-btn"> Events</button>
+        <Filter variant="passive" position="middle">Event</Filter>
       </a>
       <a href="/CLF11/guidedtour/#overview">
-        <button class="event-btn"> Guidede ture </button>
+        <Filter variant="passive" position="right">Guidede ture</Filter>
       </a>
     </div>
   </section>
