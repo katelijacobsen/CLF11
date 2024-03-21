@@ -1,61 +1,62 @@
-.maingrid{
-    display: grid;
-    grid-template-columns: 1fr;
-
+.maingrid {
+  display: grid;
+  grid-template-columns: 1fr;
 }
-.listview-grid{
+
+@media (min-width: 766px) {
+  .listview-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 0 2vw;
     justify-items: center;
-    gap:50px;
+    gap: 3rem;
     row-gap: 10vw;
-    margin-bottom: 10vw;
-    padding-left: 10vw;
-    padding-right: 10vw;
+    margin-bottom: 6rem;
+    padding: 2rem;
+  }
 }
 
-.grid-btn{
+.grid-btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 5vw;
+  padding-left: 9vw;
+  padding-right: 9vw;
+  margin: 5vw 5vw 10vw 5vw;
+}
+
+.event-btn {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.hero-container {
+  position: relative;
+  width: fit-content; /* Set the width of the container to fit its contents */
+}
+
+.title {
+  position: absolute;
+  top: 35%; /* Position the title vertically centered */
+  left: 50%; /* Position the title horizontally centered */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Move the title up and left by half of its width and height */
+  z-index: 1; /* Ensure the title appears above the image */
+  font-size: 5vw;
+}
+
+img {
+  width: 100%;
+}
+
+@media (max-width: 766px) {
+  .listview-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     justify-items: center;
-    gap: 5vw;
-    padding-left: 9vw;
-    padding-right: 9vw;
-    margin: 5vw 5vw 10vw 5vw;
+    row-gap: 10vw;
+    margin: 0 0 6rem;
+  }
 }
-
-.event-btn{
-    padding-left: 5vw;
-    padding-right: 5vw;
-}
-
-  .hero-container {
-    position: relative;
-    width: fit-content; /* Set the width of the container to fit its contents */
-  }
-
-  .title {
-    position: absolute;
-    top: 35%; /* Position the title vertically centered */
-    left: 50%; /* Position the title horizontally centered */
-    transform: translate(-50%, -50%); /* Move the title up and left by half of its width and height */
-    z-index: 1; /* Ensure the title appears above the image */
-    font-size: 5vw;
-  }
-
-  img{
-    width: 100%;
-  }
-
-  @media  (max-width: 700px) {
-    .listview-grid{
-      grid-template-columns: 1fr;
-      gap: 14vw;
-    }
-
-
-    
-  }
-
-
