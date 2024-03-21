@@ -7,22 +7,10 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import IndexImg from "../components/IndexImg.astro";
 import Mainsponsors from "../components/Mainsponsors.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://use.typekit.net/grc8wfo.css" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <header>
-      <div class="nav">
-        <Navigation />
-      </div>
+<Mainlayout title="Forside">
       <h1>2. - 25. FEBRUAR 2024</h1>
       <img
         src="/img/11-The-Wave-scaled.webp"
@@ -34,8 +22,6 @@ import Mainsponsors from "../components/Mainsponsors.astro";
           <PrimaryButton>SE KORT</PrimaryButton>
         </div>
       </div>
-    </header>
-    <main>
       <section>
         <article>
           <h2>INTERAKTIVE LYSOPLEVELSER</h2>
@@ -89,12 +75,8 @@ import Mainsponsors from "../components/Mainsponsors.astro";
           <SecondaryButtons>SE ØVRIGE</SecondaryButtons>
         </div>
       </section>
-    </main>
-    <div class="footer">
-      <Footer />
     </div>
-  </body>
-</html>
+</Mainlayout>
 
 <style>
   @media only screen and (min-width: 646px) {
