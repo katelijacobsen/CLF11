@@ -1,20 +1,20 @@
 ---
-const { variant, position } = Astro.props;
+const { variant, position, id } = Astro.props;
 ---
 
 <button class={variant + " " + position}><slot /></button>
 
 <style>
   button {
-    width: 16.89rem;
-    height: 3.42rem;
+    width: 15vw;
     border-style: none;
     font-family: "noto-sans" "sans serif";
-    font-size: 20px;
+    font-size: 1.2vw;
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.72px;
     color: var(--text-color);
+    padding: 0.5vw 1vw 0.5vw 1vw;
   }
 
   /*placering*/
@@ -25,6 +25,7 @@ const { variant, position } = Astro.props;
   }
 
   .middle {
+    border: 5px;
   }
 
   .left {
@@ -39,5 +40,29 @@ const { variant, position } = Astro.props;
   }
   .passive {
     background-color: var(--tertiary-color);
+  }
+
+  @media screen and (max-width: 800px) {
+    button {
+      width: 20vw;
+      font-size: 1.7vw;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.72px;
+      color: var(--text-color);
+      padding: 0.5vw 1vw 0.5vw 1vw;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    button {
+      width: 20vw;
+      font-size: 2.5vw;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.72px;
+      color: var(--text-color);
+      padding: 0.8vw 1.5vw 0.8vw 1.5vw;
+    }
   }
 </style>
