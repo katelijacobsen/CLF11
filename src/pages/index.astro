@@ -11,17 +11,19 @@ import Mainlayout from "../layouts/Mainlayout.astro";
 ---
 
 <Mainlayout title="Forside">
-      <h1>2. - 25. FEBRUAR 2024</h1>
-      <img
-        src="/CLF11/img/11-The-Wave-scaled.webp"
-        alt="Blå rød lysinstallation i form af trekanter med tilskuer"
-      />
-      <div class="primary-grid-container">
-        <div class="primary-btn-container">
-          <PrimaryButton>PROGRAM</PrimaryButton>
-          <PrimaryButton>SE KORT</PrimaryButton>
-        </div>
+  <header>
+    <img
+    src="/CLF11/img/11-The-Wave-scaled.webp"
+    alt="Blå rød lysinstallation i form af trekanter med tilskuer"
+    />
+    <h1>2. - 25. FEBRUAR 2024</h1>
+    <div class="primary-grid-container">
+      <div class="primary-btn-container">
+        <PrimaryButton>PROGRAM</PrimaryButton>
+        <PrimaryButton>SE KORT</PrimaryButton>
       </div>
+    </div>
+  </header>
       <section>
         <article>
           <h2>INTERAKTIVE LYSOPLEVELSER</h2>
@@ -36,7 +38,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
             organisationer.
           </p>
           <div class="secondary-btn-container">
-            <SecondaryButtons variant="../listview">LÆS MERE</SecondaryButtons>
+            <SecondaryButtons variant="/CLF11/listview">LÆS MERE</SecondaryButtons>
           </div>
         </article>
         <div>
@@ -65,7 +67,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
             organisationer.
           </p>
           <div class="secondary-btn-container">
-            <SecondaryButtons variant="../listview">LÆS MERE</SecondaryButtons>
+            <SecondaryButtons variant="/CLF11/listview">LÆS MERE</SecondaryButtons>
           </div>
         </article>
       </section>
@@ -88,7 +90,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
     .nav {
       grid-column: 1/4;
       grid-row: 1;
-      z-index: 2;
+      z-index: 1;
     }
     h1 {
       grid-column: 1/4;
@@ -104,9 +106,10 @@ import Mainlayout from "../layouts/Mainlayout.astro";
       grid-row: 1/4;
       grid-column: 1/4;
       position: relative;
-      top: -24%;
       opacity: 75%;
       box-shadow: 0px 80px 200px rgba(35, 52, 231, 0.4);
+      top: -24%;
+      z-index: -5;
     }
     main {
       margin: 0 0 24% 0;
@@ -123,7 +126,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
     }
     .primary-btn-container {
       display: grid;
-      grid-template-columns: 5vw 10vw;
+      grid-template-columns: 20em 20em;
       grid-template-rows: 80px;
     }
     .secondary-btn-container {
@@ -156,7 +159,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
       justify-content: center;
     }
     .sponsors-btn {
-      margin: 4% 0 0 0;
+      margin: 4% 0 4% 0;
       display: flex;
       justify-content: end;
     }
@@ -205,6 +208,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
       top: -24%;
       opacity: 75%;
       box-shadow: 0px 80px 200px rgba(35, 52, 231, 0.4);
+      z-index: -5;
     }
     main {
       margin: 0 0 24% 0;
@@ -254,7 +258,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
       justify-content: center;
     }
     .sponsors-btn {
-      margin: 4% 0 0 0;
+      margin: 4% 0 12% 0;
       display: flex;
       justify-content: end;
     }
