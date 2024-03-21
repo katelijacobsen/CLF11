@@ -3,6 +3,7 @@ import Card from "../components/Card.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
 import "../styles/listview.css";
 import "../styles/global.css";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 
 const items = await fetch(
   "https://txcxsnasevoytrplgpun.supabase.co/rest/v1/data",
@@ -22,6 +23,7 @@ const items = await fetch(
       <img src="/img/program-img.png" alt="man der kigger på lysshow" />
       <h1 class="title">Program</h1>
     </div>
+    <Breadcrumbs />
     <div class="grid-btn">
       <a href="/installations/#overview">
         <button class="event-btn" id="overview"> Installationer</button>
@@ -45,3 +47,4 @@ const items = await fetch(
     }
   </section>
 </Mainlayout>
+
