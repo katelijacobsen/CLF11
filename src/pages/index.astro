@@ -1,8 +1,13 @@
 ---
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1fe9225 (build index)
 import "../styles/global.css";
 import SecondaryButtons from "../components/SecondaryButtons.astro";
 import PrimaryButton from "../components/PrimaryButton.astro";
 import Newsletter from "../components/Newsletter.astro";
+<<<<<<< HEAD
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import IndexImg from "../components/IndexImg.astro";
@@ -64,6 +69,98 @@ import IndexImg from "../components/IndexImg.astro";
     </section>
     <Footer />
   </body>
+=======
+import "../styles/global.css"
+import SecondaryButtons from "../components/SecondaryButtons.astro"
+import PrimaryButton from "../components/PrimaryButton.astro"
+import Newsletter from "../components/Newsletter.astro"
+=======
+>>>>>>> 1fe9225 (build index)
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import IndexImg from "../components/IndexImg.astro";
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://use.typekit.net/grc8wfo.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <Navigation />
+      </div>
+      <h1>2. - 25. FEBRUAR 2024</h1>
+      <img
+        src="../img/11-The-Wave-scaled.webp"
+        alt="Blå rød lysinstallation i form af trekanter med tilskuer"
+      />
+      <div class="primary-grid-container">
+        <div class="primary-btn-container">
+          <PrimaryButton>PROGRAM</PrimaryButton>
+          <PrimaryButton>SE KORT</PrimaryButton>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <article>
+          <h2>INTERAKTIVE LYSOPLEVELSER</h2>
+          <p>
+            Copenhagen Light Festival er en årligt tilbagevendende festival for
+            lys, der transformerer det stille og kolde vintermørke til en særlig
+            fejring af lyskunst, lysdesign og lysende oplevelser midt i
+            København. I løbet af tre uger i februar præsenterer festivalen et
+            bredt udvalg af lysbaserede værker – heriblandt skulptur,
+            installation, projektion, event og belysning skabt af både
+            etablerede og spirende lysdesignere, lyskunstnere, studerende og
+            organisationer.
+          </p>
+          <div class="secondary-btn-container">
+            <SecondaryButtons>LÆS MERE</SecondaryButtons>
+          </div>
+        </article>
+        <div>
+          <IndexImg
+            src={"img/40.-Flaekkens-Lys3-Foto-Kim-Hoeltermand-1-e1706021244914-853x551.webp"}
+          />
+        </div>
+      </section>
+      <div class="Newsletter">
+        <Newsletter />
+      </div>
+      <section>
+        <div>
+          <IndexImg src={"img/03.-PiXLEarth-3-scaled.webp"} />
+        </div>
+        <article>
+          <h2>ARRANGERMENTER</h2>
+          <p>
+            Copenhagen Light Festival er en årligt tilbagevendende festival for
+            lys, der transformerer det stille og kolde vintermørke til en særlig
+            fejring af lyskunst, lysdesign og lysende oplevelser midt i
+            København. I løbet af tre uger i februar præsenterer festivalen et
+            bredt udvalg af lysbaserede værker – heriblandt skulptur,
+            installation, projektion, event og belysning skabt af både
+            etablerede og spirende lysdesignere, lyskunstnere, studerende og
+            organisationer.
+          </p>
+          <div class="secondary-btn-container">
+            <SecondaryButtons>LÆS MERE</SecondaryButtons>
+          </div>
+        </article>
+      </section>
+    </main>
+<<<<<<< HEAD
+
+    <Footer />
+<<<<<<< HEAD
+	</body>
+>>>>>>> 6a54351 (merge buttons and newsletter in main)
 </html>
 
 <style>
@@ -90,4 +187,93 @@ import IndexImg from "../components/IndexImg.astro";
   article {
     padding: 0 16% 0 0;
   }
+=======
+=======
+    <div class="footer">
+      <Footer />
+    </div>
+>>>>>>> d3d530d (Index-v2)
+  </body>
+</html>
+
+<style>
+  header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
+  }
+  .nav {
+    grid-column: 1/4;
+    grid-row: 1;
+    z-index: 2;
+    padding: 40px 54px 0 54px;
+  }
+  h1 {
+    grid-column: 1/4;
+    grid-row: 2;
+    z-index: 1;
+    padding-left: 54px;
+    padding-bottom: 1%;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    place-self: stretch;
+    grid-row: 1/4;
+    grid-column: 1/4;
+    position: relative;
+    top: -24%;
+    opacity: 75%;
+    box-shadow: 0px 80px 200px rgba(35, 52, 231, 0.4);
+  }
+  main {
+    margin: 0 0 24% 0;
+    padding: 0;
+  }
+
+  body {
+    background-image: url("../img/grain-bg.svg");
+    background-size: contain;
+  }
+  .primary-grid-container {
+    grid-column: 1;
+    grid-row: 3;
+    padding-left: 54px;
+  }
+  .primary-btn-container {
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    grid-template-rows: 80px;
+    gap: 8%;
+  }
+  .secondary-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16%;
+  }
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 54px 0% 54px;
+  }
+  article {
+    padding: 0% 4% 0% 54px;
+  }
+  .footer {
+    background:
+      radial-gradient(
+        70.2% 173.84% at 50.03% 95.39%,
+        rgba(141, 103, 251, 0.35) 0%,
+        rgba(102, 102, 102, 0) 100%
+      ),
+      rgba(211, 211, 211, 0) -200.115px 98.15px / 7% 4.994% no-repeat;
+  }
+<<<<<<< HEAD
+
+
+>>>>>>> 1fe9225 (build index)
+=======
+>>>>>>> 6ebff48 (index-v2)
 </style>
