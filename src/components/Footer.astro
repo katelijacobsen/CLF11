@@ -41,12 +41,11 @@ import SoMe from "../components/SoMe.astro";
   li,
   a,
   .company_name {
-    font-family: "noto-sans" "sans serif";
+    font-family: sans-serif;
     font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
+
+    font-weight: 100;
     line-height: 150%;
-    letter-spacing: 0.72px;
     color: var(--text-color);
     list-style: none;
     text-decoration: none;
@@ -66,6 +65,7 @@ import SoMe from "../components/SoMe.astro";
     .grid_1_1_1 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      gap: 1em;
     }
     .footer_content {
       text-align: right;
@@ -81,12 +81,15 @@ import SoMe from "../components/SoMe.astro";
 
   @media only screen and (max-width: 646px) {
     .grid_1_1_1 {
+      padding: 1em;
       display: grid;
       grid-template-columns: 1fr;
+      gap: 1em;
     }
     .footer_content {
       text-align: center;
       grid-row-start: 1;
+      margin: 0 0 1em;
     }
     .company_name {
       opacity: 0.5;
