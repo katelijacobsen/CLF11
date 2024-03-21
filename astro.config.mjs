@@ -9,4 +9,5 @@ export default defineConfig({
     // Netlify deployment
     output: 'server',
     adapter: netlify(),
+    outDir: './dist/CLF11'
 });
