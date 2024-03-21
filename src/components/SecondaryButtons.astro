@@ -1,8 +1,8 @@
 ---
-const { variant } = Astro.props;
+const { link , variant } = Astro.props;
 ---
 
-<a  href="/listview" class={variant}>
+<a  href={variant} class={link}>
   <div>
     <slot />
     <img class="arrow" src="/assets/Arrow.svg" alt="Pil" />
