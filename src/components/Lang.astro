@@ -2,7 +2,7 @@
 const { active } = Astro.props;
 ---
 
-<section>
+<section id="languageSwitcher">
   <p id="en">EN</p>
   <p id="da" class="active">DA</p>
 </section>
@@ -10,7 +10,7 @@ const { active } = Astro.props;
 <style>
   @media only screen and (max-width: 646px) {
     section p {
-     font-size: 14px;
+      font-size: 14px;
     }
   }
   section {
@@ -30,7 +30,7 @@ const { active } = Astro.props;
 </style>
 
 <script>
-  const activeLang = document.querySelector("section");
+  const activeLang = document.querySelector("#languageSwitcher");
   const da = document.querySelector("#da");
   const en = document.querySelector("#en");
 
