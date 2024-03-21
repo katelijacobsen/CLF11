@@ -165,15 +165,17 @@ import Lang from "./Lang.astro";
     letter-spacing: 0.72px;
     color: var(--text-color);
     font-size: 1rem;
+
   }
 
-  ul li  {
+  ul li {
     padding: 15px 0 4px;
   }
 
   li a:hover {
     text-decoration: underline 0.5px;
     text-underline-offset: 4px;
+
   }
 
   @media only screen and (max-width: 646px) {
@@ -202,7 +204,6 @@ import Lang from "./Lang.astro";
   // use this code for activating the global-menu
   let menuBtn = document.querySelector(".menu-btn");
   let globalMenu = document.querySelector(".globalmenu");
-  let menuLink = document.querySelector(".nav-link");
 
   menuBtn.addEventListener("click", function () {
     menuBtn.classList.toggle("active");
