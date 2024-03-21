@@ -7,7 +7,8 @@ export default defineConfig({
     site: 'https://katelijacobsen.github.io',
     base: '/CLF11',
     // Netlify deployment
-    output: 'server',
-    adapter: netlify(),
-    outDir: './dist/CLF11'
+    // output: 'server',
+    // adapter: netlify(),
+    outDir: './dist',
+    publicDir: './dist/CLF11'
 });
