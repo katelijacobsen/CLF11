@@ -5,5 +5,4 @@ import netlify from '@astrojs/netlify';
 export default defineConfig({
     // Github deployment
    // site: 'https://katelijacobsen.github.io',
-    //base: '/CLF11',
 });

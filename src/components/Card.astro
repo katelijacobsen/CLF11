@@ -5,7 +5,7 @@ import SecondaryButtons from "./SecondaryButtons.astro";
 ---
 
 <article class="card">
-  <a href={`/CLF11/program/${item.slug}`}>
+  <a href={`/program/${item.slug}`}>
     <div class="image-container">
       <img src={item.image} alt="" />
     </div>
@@ -15,7 +15,7 @@ import SecondaryButtons from "./SecondaryButtons.astro";
         {item.description}
       </p>
       <div class="button-container">
-          <SecondaryButtons variant={`/CLF11/program/${item.slug}`}/>
+          <SecondaryButtons variant={`/program/${item.slug}`}/>
       </div>
     </div>
   </a>
